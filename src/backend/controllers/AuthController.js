@@ -1,7 +1,9 @@
 import { v4 as uuid } from "uuid";
 import { Response } from "miragejs";
 import { formatDate } from "../utils/authUtils";
+// eslint-disable-next-line @typescript-eslint/no-var-requires, no-undef
 const sign = require("jwt-encode");
+// import { process } from '../../../types/process'; //todo: remove this if auth doesn't work
 /**
  * All the routes related to Auth are present here.
  * These are Publicly accessible routes.
@@ -23,7 +25,7 @@ export const signupHandler = function (schema, request) {
         422,
         {},
         {
-          errors: ["Unprocessable Entity. Email Already Exists."],
+          errors: ["Unprocessable Entity. Email Already Exists."]
         }
       );
     }
@@ -36,7 +38,7 @@ export const signupHandler = function (schema, request) {
       updatedAt: formatDate(),
       ...rest,
       cart: [],
-      wishlist: [],
+      wishlist: []
     };
     const createdUser = schema.users.create(newUser);
     const encodedToken = sign({ _id, email }, process.env.REACT_APP_JWT_SECRET);
@@ -46,7 +48,7 @@ export const signupHandler = function (schema, request) {
       500,
       {},
       {
-        error,
+        error
       }
     );
   }
@@ -70,10 +72,7 @@ export const loginHandler = function (schema, request) {
       );
     }
     if (password === foundUser.password) {
-      const encodedToken = sign(
-        { _id: foundUser._id, email },
-        process.env.REACT_APP_JWT_SECRET
-      );
+      const encodedToken = sign({ _id: foundUser._id, email }, process.env.REACT_APP_JWT_SECRET);
       foundUser.password = undefined;
       return new Response(200, {}, { foundUser, encodedToken });
     }
@@ -81,9 +80,7 @@ export const loginHandler = function (schema, request) {
       401,
       {},
       {
-        errors: [
-          "The credentials you entered are invalid. Unauthorized access error.",
-        ],
+        errors: ["The credentials you entered are invalid. Unauthorized access error."]
       }
     );
   } catch (error) {
@@ -91,7 +88,7 @@ export const loginHandler = function (schema, request) {
       500,
       {},
       {
-        error,
+        error
       }
     );
   }
