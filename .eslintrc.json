@@ -1,7 +1,8 @@
 {
   "env": {
     "browser": true,
-    "es2021": true
+    "es2021": true,
+    "node": true //else process.env gives undefined error
   },
   "extends": [
     "eslint:recommended",
@@ -22,7 +23,7 @@
   },
   "rules": {
     "react/prop-types": 0,
-    "indent": ["error", 2],
+    // "indent": ["error", 2],
     "linebreak-style": 1,
     "react/react-in-jsx-scope": "off", //No need to import React in every file
     "prettier/prettier": ["error"]
