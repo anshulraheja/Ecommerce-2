@@ -1,37 +1,38 @@
 {
-  "env": {
-    "browser": true,
-    "es2021": true,
-    "node": true //else process.env gives undefined error
-  },
-  "extends": [
-    "eslint:recommended",
-    "plugin:@typescript-eslint/eslint-recommended",
-    "plugin:@typescript-eslint/recommended",
-    // "airbnb",
-    "prettier"
-  ],
-  "parser": "@typescript-eslint/parser",
-  "plugins": ["@typescript-eslint", "prettier"],
-  "overrides": [],
-  "parserOptions": {
-    "ecmaVersion": "latest",
-    "sourceType": "module",
-    "ecmaFeatures": {
-      "jsx": true
-    }
-  },
-  "rules": {
-    "react/prop-types": 0,
-    // "indent": ["error", 2],
-    "linebreak-style": 1,
-    "react/react-in-jsx-scope": "off", //No need to import React in every file
-    "prettier/prettier": ["error"]
-    // "react/jsx-filename-extension": [2, { "extensions": [".js", ".jsx", ".ts", ".tsx"] }]
-  },
-  "settings": {
-    "react": {
-      "version": "detect"
-    }
-  }
+	"env": {
+		"browser": true,
+		"es2021": true,
+		"node": true //else process.env gives undefined error
+	},
+	"extends": [
+		"eslint:recommended",
+		"plugin:@typescript-eslint/eslint-recommended",
+		"plugin:@typescript-eslint/recommended",
+		// "airbnb",
+		"prettier"
+	],
+	"parser": "@typescript-eslint/parser",
+	"plugins": ["@typescript-eslint", "prettier"],
+	"overrides": [],
+	"parserOptions": {
+		"ecmaVersion": "latest",
+		"sourceType": "module",
+		"ecmaFeatures": {
+			"jsx": true
+		}
+	},
+	"rules": {
+		"react/prop-types": 0,
+		// "indent": ["error", "tab"],
+		"linebreak-style": 1,
+		"react/react-in-jsx-scope": "off", //No need to import React in every file
+		"prettier/prettier": ["error"],
+		"no-multi-spaces": ["error"] // we want to avoid extraneous spaces
+		// "react/jsx-filename-extension": [2, { "extensions": [".js", ".jsx", ".ts", ".tsx"] }]
+	},
+	"settings": {
+		"react": {
+			"version": "detect"
+		}
+	}
 }

@@ -9,10 +9,10 @@ makeServer();
 
 const root = ReactDOM.createRoot(document.getElementById('root') as HTMLElement);
 root.render(
-  <React.StrictMode>
-    {/* pass the redux store into the provider */}
-    <Provider store={store}>
-      <App />
-    </Provider>
-  </React.StrictMode>
+	<React.StrictMode>
+		{/* pass the redux store into the provider */}
+		<Provider store={store}>
+			<App />
+		</Provider>
+	</React.StrictMode>
 );

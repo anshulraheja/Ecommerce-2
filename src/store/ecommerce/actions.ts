@@ -1,15 +1,24 @@
 import {
-  FETCH_PRODUCT_REQUEST,
-  FETCH_PRODUCT_SUCCESS,
-  FETCH_SINGLE_PRODUCT_REQUEST,
-  FETCH_SINGLE_PRODUCT_SUCCESS
+	FETCH_CATEGORIES_REQUEST,
+	FETCH_CATEGORIES_SUCCESS,
+	FETCH_PRODUCT_REQUEST,
+	FETCH_PRODUCT_SUCCESS,
+	FETCH_SINGLE_CATEGORY_REQUEST,
+	FETCH_SINGLE_CATEGORY_SUCCESS,
+	FETCH_SINGLE_PRODUCT_REQUEST,
+	FETCH_SINGLE_PRODUCT_SUCCESS
 } from './actionTypes';
 import {
-  FetchProductsRequest,
-  FetchProductsSuccess,
-  FetchSingleProductRequest,
-  FetchSingleProductSuccess,
-  IProduct
+	FetchCategoriesRequest,
+	FetchCategoriesSuccess,
+	FetchProductsRequest,
+	FetchProductsSuccess,
+	FetchSingleCategoryRequest,
+	FetchSingleCategorySuccess,
+	FetchSingleProductRequest,
+	FetchSingleProductSuccess,
+	ICategory,
+	IProduct
 } from './types';
 
 /**
@@ -20,20 +29,39 @@ import {
  * @returns
  */
 export const fetchProductsRequest = (): FetchProductsRequest => ({
-  type: FETCH_PRODUCT_REQUEST
+	type: FETCH_PRODUCT_REQUEST
 });
 
 export const fetchProductsSuccess = (payload: Array<IProduct>): FetchProductsSuccess => ({
-  type: FETCH_PRODUCT_SUCCESS,
-  payload
+	type: FETCH_PRODUCT_SUCCESS,
+	payload
 });
 
 export const fetchSingleProductRequest = (payload: string): FetchSingleProductRequest => ({
-  type: FETCH_SINGLE_PRODUCT_REQUEST,
-  payload
+	type: FETCH_SINGLE_PRODUCT_REQUEST,
+	payload
 });
 
 export const fetchSingleProductSuccess = (payload: IProduct): FetchSingleProductSuccess => ({
-  type: FETCH_SINGLE_PRODUCT_SUCCESS,
-  payload
+	type: FETCH_SINGLE_PRODUCT_SUCCESS,
+	payload
+});
+
+export const fetchCategoriesRequest = (): FetchCategoriesRequest => ({
+	type: FETCH_CATEGORIES_REQUEST
+});
+
+export const fetchCategoriesSuccess = (payload: Array<ICategory>): FetchCategoriesSuccess => ({
+	type: FETCH_CATEGORIES_SUCCESS,
+	payload
+});
+
+export const fetchSingleCategoryRequest = (payload: string): FetchSingleCategoryRequest => ({
+	type: FETCH_SINGLE_CATEGORY_REQUEST,
+	payload
+});
+
+export const fetchSingleCategorySuccess = (payload: ICategory): FetchSingleCategorySuccess => ({
+	type: FETCH_SINGLE_CATEGORY_SUCCESS,
+	payload
 });
