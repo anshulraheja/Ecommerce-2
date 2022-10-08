@@ -89,25 +89,25 @@ export const post = (path: string, data: any) => {
 };
 
 export const postDownload = (path: string, data: any) => {
-  // return new Promise((resolve, reject) => {
-  //     axios
-  //         .post(`${process.env.API_URL}${path}`, data, getHeadersDownload())
-  //         .then(response => {
-  //             if (response?.data) {
-  //                 resolve(response);
-  //             } else {
-  //                 const error = {
-  //                     color: WARNING,
-  //                     title: response?.data?.msg ?? COMMON_ERROR,
-  //                     flag: true
-  //                 };
-  //                 reject(error);
-  //             }
-  //         })
-  //         .catch(error => {
-  //             reject(handleError(error));
-  //         });
-  // });
+  return new Promise((resolve, reject) => {
+    axios
+      .post(`${process.env.API_URL}${path}`, data, getHeadersDownload())
+      .then((response) => {
+        if (response?.data) {
+          resolve(response);
+        } else {
+          const error = {
+            color: WARNING,
+            title: response?.data?.msg ?? COMMON_ERROR,
+            flag: true
+          };
+          reject(error);
+        }
+      })
+      .catch((error) => {
+        reject(handleError(error));
+      });
+  });
 
   return new Promise((resolve, reject) => {
     fetch(`${process.env.API_URL}${path}`, {

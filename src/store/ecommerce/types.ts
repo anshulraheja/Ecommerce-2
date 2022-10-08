@@ -1,7 +1,13 @@
-import { FETCH_PRODUCT_REQUEST, FETCH_PRODUCT_SUCCESS } from './actionTypes';
+import {
+  FETCH_PRODUCT_REQUEST,
+  FETCH_PRODUCT_SUCCESS,
+  FETCH_SINGLE_PRODUCT_REQUEST,
+  FETCH_SINGLE_PRODUCT_SUCCESS
+} from './actionTypes';
 
 export type IProductsState = {
   products: Array<IProduct>;
+  singleProduct: IProduct;
 };
 
 export type FetchProductsRequest = {
@@ -22,4 +28,14 @@ export type IProduct = {
   id: string;
 };
 
-export type ProductActions = FetchProductsRequest | FetchProductsSuccess;
+export type FetchSingleProductRequest = {
+  type: typeof FETCH_SINGLE_PRODUCT_REQUEST;
+  payload: string;
+};
+
+export type FetchSingleProductSuccess = {
+  type: typeof FETCH_SINGLE_PRODUCT_SUCCESS;
+  payload: IProduct;
+};
+
+export type ProductActions = FetchProductsRequest | FetchProductsSuccess | FetchSingleProductRequest | FetchSingleProductSuccess;

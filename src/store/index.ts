@@ -19,6 +19,7 @@ export const initialState = {
   //combineReducers to combine all the reducers of the app - for now we have one
   rootReducer = combineReducers({ EcommerceReducer }),
   // redux sagas is a middleware that we apply to the store
+  // the returned object contains dispatch and subscribe functions.
   store = createStore(rootReducer, {}, composeWithDevTools(applyMiddleware(sagaMiddleware, logger)));
 
 /**
