@@ -4,7 +4,7 @@ export const makeRequest = (url: string, payload: any, resolve: any, reject: any
 	switch (method) {
 		case 'GET':
 			return utils
-			  .get(url)
+				.get(url)
 				.then((response: any) => {
 					resolve(response);
 				})

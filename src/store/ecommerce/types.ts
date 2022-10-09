@@ -1,4 +1,14 @@
 import {
+	ADD_TO_CART_REQUEST,
+	ADD_TO_CART_SUCCESS,
+	ADD_TO_WISHLIST_REQUEST,
+	ADD_TO_WISHLIST_SUCCESS,
+	DELETE_FROM_CART_REQUEST,
+	DELETE_FROM_CART_SUCCESS,
+	DELETE_FROM_WISHLIST_REQUEST,
+	DELETE_FROM_WISHLIST_SUCCESS,
+	FETCH_CART_REQUEST,
+	FETCH_CART_SUCCESS,
 	FETCH_CATEGORIES_REQUEST,
 	FETCH_CATEGORIES_SUCCESS,
 	FETCH_PRODUCT_REQUEST,
@@ -6,7 +16,11 @@ import {
 	FETCH_SINGLE_CATEGORY_REQUEST,
 	FETCH_SINGLE_CATEGORY_SUCCESS,
 	FETCH_SINGLE_PRODUCT_REQUEST,
-	FETCH_SINGLE_PRODUCT_SUCCESS
+	FETCH_SINGLE_PRODUCT_SUCCESS,
+	FETCH_WISHLIST_REQUEST,
+	FETCH_WISHLIST_SUCCESS,
+	UPDATE_QTY_IN_CART_REQUEST,
+	UPDATE_QTY_IN_CART_SUCCESS
 } from './actionTypes';
 
 export type IProductsState = {
@@ -14,6 +28,8 @@ export type IProductsState = {
 	singleProduct: IProduct;
 	categories: Array<ICategory>;
 	singleCategory: ICategory;
+	cart: Array<IProduct>;
+	wishlist: Array<IProduct>;
 };
 
 export type FetchProductsRequest = {
@@ -68,6 +84,63 @@ export type FetchSingleCategorySuccess = {
 	payload: ICategory;
 };
 
+export type FetchCartRequest = {
+	type: typeof FETCH_CART_REQUEST;
+};
+
+export type FetchCartSuccess = {
+	type: typeof FETCH_CART_SUCCESS;
+	payload: Array<IProduct>;
+};
+
+export type AddToCartRequest = {
+	type: typeof ADD_TO_CART_REQUEST;
+	payload: IProduct;
+};
+export type AddToCartSuccess = {
+	type: typeof ADD_TO_CART_SUCCESS;
+	payload: Array<IProduct>;
+};
+export type DeleteFromCartRequest = {
+	type: typeof DELETE_FROM_CART_REQUEST;
+	payload: string;
+};
+export type DeleteFromCartSuccess = {
+	type: typeof DELETE_FROM_CART_SUCCESS;
+	payload: Array<IProduct>;
+};
+export type UpdateQtyInCartRequest = {
+	type: typeof UPDATE_QTY_IN_CART_REQUEST;
+	payload: string;
+};
+export type UpdateQtyInCartSuccess = {
+	type: typeof UPDATE_QTY_IN_CART_SUCCESS;
+	payload: Array<IProduct>;
+};
+export type FetchWishlistRequest = {
+	type: typeof FETCH_WISHLIST_REQUEST;
+};
+
+export type FetchWishlistSuccess = {
+	type: typeof FETCH_WISHLIST_SUCCESS;
+	payload: Array<IProduct>;
+};
+export type AddToWishlistRequest = {
+	type: typeof ADD_TO_WISHLIST_REQUEST;
+	payload: IProduct;
+};
+export type AddToWishlistSuccess = {
+	type: typeof ADD_TO_WISHLIST_SUCCESS;
+	payload: Array<IProduct>;
+};
+export type DeleteFromWishlistRequest = {
+	type: typeof DELETE_FROM_WISHLIST_REQUEST;
+	payload: string;
+};
+export type DeleteFromWishlistSuccess = {
+	type: typeof DELETE_FROM_WISHLIST_SUCCESS;
+	payload: Array<IProduct>;
+};
 export type ProductActions =
 	| FetchProductsRequest
 	| FetchProductsSuccess
@@ -76,4 +149,18 @@ export type ProductActions =
 	| FetchCategoriesRequest
 	| FetchCategoriesSuccess
 	| FetchSingleCategoryRequest
-	| FetchSingleCategorySuccess;
+	| FetchSingleCategorySuccess
+	| FetchCartRequest
+	| FetchCartSuccess
+	| AddToCartRequest
+	| AddToCartSuccess
+	| DeleteFromCartRequest
+	| DeleteFromCartSuccess
+	| UpdateQtyInCartRequest
+	| UpdateQtyInCartSuccess
+	| FetchWishlistRequest
+	| FetchWishlistSuccess
+	| AddToWishlistRequest
+	| AddToWishlistSuccess
+	| DeleteFromWishlistRequest
+	| DeleteFromWishlistSuccess;

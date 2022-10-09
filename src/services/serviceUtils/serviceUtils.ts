@@ -18,9 +18,10 @@ export const token = localStorage.getItem('access_token');
 export const getHeaders = () => {
 	return {
 		headers: {
-			Accept: 'application/json',
-			'content-Type': 'application/json'
-			// Authorization: token ? `Bearer ${token}` : ''
+			// Accept: 'application/json',
+			// 'content-Type': 'application/json'
+			authorization:
+				'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI0MmI5YTdiMi00YWM5LTQ5YzgtYmRhNi0zYTU5NzI2YzVjMzkiLCJlbWFpbCI6ImFkbWluIn0.mh_afC1gIkiNGa_0c-bPs2V912-oMnqCP4_Jz8A3fjE'
 		}
 	};
 };
@@ -47,7 +48,7 @@ export const getHeadersForFileUpload = () => {
 export const get = (path: string) => {
 	return new Promise((resolve, reject) => {
 		axios
-			.get(`${path}`, getHeaders())
+			.get(`${path}`)
 			.then((response) => {
 				if (response?.data?.success || response?.data || response.status == 200) {
 					resolve(response?.data);

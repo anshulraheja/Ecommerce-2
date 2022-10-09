@@ -2,6 +2,8 @@ import { useDispatch } from 'react-redux';
 import { useTypedSelector } from './store';
 import { ICategory, IProduct } from './store/ecommerce';
 import {
+	addToCartRequest,
+	fetchCartRequest,
 	fetchCategoriesRequest,
 	fetchProductsRequest,
 	fetchSingleCategoryRequest,
@@ -17,11 +19,13 @@ function App() {
 			{' '}
 			<button onClick={() => dispatch(fetchProductsRequest())}>Call</button>
 			<button onClick={() => dispatch(fetchCategoriesRequest())}>Categories</button>
+			<button onClick={() => dispatch(fetchCartRequest())}>Fetch Cart</button>
 			<div>
 				{products?.map((ele: IProduct) => (
 					<div key={ele._id}>
 						{ele.title}
-						<button onClick={() => dispatch(fetchSingleProductRequest(ele._id))}>{ele._id}</button>
+						<button onClick={() => dispatch(fetchSingleProductRequest(ele._id))}>{ele._id}</button>{' '}
+						<button onClick={() => dispatch(addToCartRequest(ele))}>Add to cart</button>
 					</div>
 				))}
 			</div>
