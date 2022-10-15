@@ -20,8 +20,7 @@ export const getHeaders = () => {
 		headers: {
 			// Accept: 'application/json',
 			// 'content-Type': 'application/json'
-			authorization:
-				'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI0MmI5YTdiMi00YWM5LTQ5YzgtYmRhNi0zYTU5NzI2YzVjMzkiLCJlbWFpbCI6ImFkbWluIn0.mh_afC1gIkiNGa_0c-bPs2V912-oMnqCP4_Jz8A3fjE'
+			// authorization: ''
 		}
 	};
 };
@@ -72,12 +71,12 @@ export const post = (path: string, data: any) => {
 		axios
 			.post(`${path}`, data, getHeaders())
 			.then((response) => {
-				if (response?.data?.success || response?.data || typeof response?.data) {
-					resolve(response?.data?.data);
+				if (response?.data?.success || response?.data || typeof response?.data || response.status == 201) {
+					resolve(response?.data);
 				} else {
 					const error = {
 						color: WARNING,
-						title: response?.data?.msg ?? COMMON_ERROR,
+						title: response?.statusText ?? COMMON_ERROR,
 						flag: true
 					};
 					reject(error);

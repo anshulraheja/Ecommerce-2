@@ -3,6 +3,7 @@ import { applyMiddleware, combineReducers, legacy_createStore as createStore } f
 import { composeWithDevTools } from 'redux-devtools-extension';
 import { logger } from 'redux-logger';
 import reduxSaga from 'redux-saga';
+import { authInitialState, AuthReducer } from './auth/reducer';
 import { ecommerceInitialState, EcommerceReducer } from './ecommerce/reducer';
 import { rootSaga } from './sagas';
 
@@ -13,11 +14,12 @@ import { rootSaga } from './sagas';
  * We would use an array of middleware for multiple middleware.
  */
 export const initialState = {
-		product: ecommerceInitialState
+		product: ecommerceInitialState,
+		auth: authInitialState
 	},
 	sagaMiddleware = reduxSaga(),
 	//combineReducers to combine all the reducers of the app - for now we have one
-	rootReducer = combineReducers({ EcommerceReducer }),
+	rootReducer = combineReducers({ EcommerceReducer, AuthReducer }),
 	// redux sagas is a middleware that we apply to the store
 	// the returned object contains dispatch and subscribe functions.
 	store = createStore(rootReducer, {}, composeWithDevTools(applyMiddleware(sagaMiddleware, logger)));
