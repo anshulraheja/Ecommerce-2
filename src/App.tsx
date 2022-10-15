@@ -1,5 +1,6 @@
 import { useDispatch } from 'react-redux';
 import { useTypedSelector } from './store';
+import { loginRequest, signupRequest } from './store/auth/actions';
 import { ICategory, IProduct } from './store/ecommerce';
 import {
 	addToCartRequest,
@@ -35,6 +36,16 @@ function App() {
 						<button onClick={() => dispatch(fetchSingleCategoryRequest(ele._id))}>{ele.categoryName}</button>
 					</div>
 				))}
+			</div>
+			<div>
+				<button onClick={() => dispatch(signupRequest({ name: 'anshul', email: 'xyz@gmail.com', password: 'abc' }))}>
+					Signup
+				</button>
+			</div>
+			<div>
+				<button onClick={() => dispatch(loginRequest({ email: 'adarshbalika@gmail.com', password: 'adarshbalik' }))}>
+					Login
+				</button>
 			</div>
 		</div>
 	);
