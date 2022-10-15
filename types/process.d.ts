@@ -1,7 +1,7 @@
 type process = {
-  env: {
-    REACT_APP_JWT_SECRET: string;
-  };
+	env: {
+		REACT_APP_JWT_SECRET: string;
+	};
 };
 
 export { process };
