@@ -11,6 +11,8 @@ import {
 	fetchSingleCategoryRequest,
 	fetchSingleProductRequest
 } from './store/ecommerce/actions';
+import './styles/default.scss';
+
 function App() {
 	const dispatch = useDispatch();
 	const reduxState = useTypedSelector((state) => state.EcommerceReducer);

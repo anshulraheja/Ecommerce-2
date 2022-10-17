@@ -1,0 +1,184 @@
+$TRBL: top, right, bottom, left;
+
+$color-primary: #007bff !default;
+$color-secondary: #6c757d !default;
+$color-success: #28a745 !default;
+$color-error: #dc3545 !default;
+$color-warning: #ffc107 !default;
+$color-info: #17a2b8 !default;
+$color-dark: #343a40 !default;
+$color-light: #f8f9fa !default;
+
+// ------------- COLORS ------------- //
+
+$primary-black: #000;
+$primary-white: #fff;
+$primary-background: #f6f6fb;
+
+$color-ghost-white: #f7f5ff;
+$table-background: #f0eff5;
+
+$table-actions: #ff8032;
+
+$text-color: #383838;
+$text-color-dark: #262626;
+$text-color-light: #666;
+$text-color-extra-light: #a3a3a3;
+
+//table
+$table-color: #3f3d63;
+$table-border: #717baa;
+$table-body: #7780a8;
+
+// charts
+$donut-text-color: #7780a8;
+
+// grayScale
+$gray-light-dark: #848484;
+$gray-extra-dark: #222;
+$gray-extra-dark-1: #2219;
+$gray-dark: #333;
+$gray-extra-dark-2: #1B1B1B;
+$gray-medium-dark: #666;
+$gray-medium: #969696;
+$gray-medium-light: #e8e8e8;
+$gray-light: #f8f8f8;
+$gray-iron: #d5d5e2;
+$gray-clan: #c0ccda;
+$gray-menu: #888;
+$gray-pastel: #ccc;
+$gray-border: #dcdcdc;
+$gray-extra-border: #bfbfbf;
+$gray-background-or-type: #fafafa;
+$gray-background-view-scheme: #c4c4c414;
+$gray-color-view-scheme: #797979;
+$gray-background: #f5f5f5;
+$gray-avatar: #c4c4c4;
+$selector-gray-border: #d9d9d9;
+$gray-shadow: rgba(221, 223, 234, 0.7);
+$gray-med-dark: #fbfbff;
+$gray-border-med: #efefef;
+$gray-box-dark: #f1f1f1;
+$gray-light-border: #dedede;
+$gray-border-light: #e6e6ee;
+$gray-charcoal: #4a4a4a;
+
+// Primary
+$color-primary: #ff5f00;
+$color-primary-medium: #ffb183;
+$color-primary-light: #ffeadd;
+
+// Secondary
+$color-secondary: #1e1464;
+$color-secondary-dark: #4232b0;
+$color-secondary-medium: #5d49e4;
+$color-secondary-light: #d3cdff;
+
+// Highlight
+$color-highlights: #ffb900;
+$color-highlights-dark: #f5b200;
+$color-highlights-medium: #f9db8b;
+$color-highlights-light: #faefd1;
+
+// Gradient
+$color-gradient: linear-gradient(273.58deg, #ff5f00 0%, #ff9a5a 100%);
+$gradient-light: #ff9a5a;
+
+$color-error: #ff3232;
+$color-info: #616d78;
+
+$warning-container: #fff6de;
+$warning-border: #ffc428;
+
+$error-container: #fff8f8;
+$error-border: #f97171;
+
+// Tooltip
+$tooltip-background: #fff9f3;
+$tooltip-color: #555;
+
+// Success & Warning
+$color-success-light: #007e33;
+$color-success-dark: #0cb551;
+$color-success-background: #d4f7e2;
+
+$color-warning-light: #b80000;
+$color-warning-dark: #f64c4c;
+$color-warning-background: #fceeee;
+
+// Brown scale
+$color-extra-light-brown: #fffcf5;
+
+//Blue scale
+$color-aqua-blue: rgba(181, 234, 215, 0.47);
+$color-dark-blue: #323444;
+$color-light-blue: #1890ff;
+$color-extra-light-blue: #e2dff8;
+$color-purply-blue: #f4f2ff;
+$color-medium-blue: #4582EC;
+
+// Red scale
+$red-extra-light: #feefe4;
+$color-hot-pink: rgba(254, 239, 228, 0.25);
+
+// Orange scale
+$orange-extra-light-2: #ffefe6;
+$orange-extra-light-1: #ffd877;
+$orange-light: #ffa773;
+$orange-extra-light: rgba(250, 210, 108, 0.37);
+$orange-medium: #ff6509;
+
+// ------------- SPACING ------------- //
+$space: 1rem; // 16px //
+$spacing-3xs: $space * 0.25; // 4px 
+$spacing-xxs: $space * 0.5; // 8px 
+$spacing-xs: $space * 0.75; // 12px 
+$spacing-sm: $space; // 16px 
+$spacing-md: $space * 1.25; // 20px 
+$spacing-lg: $space * 1.5; // 24px 
+$spacing-xl: $space * 1.75; // 28px 
+$spacing-xxl: $space * 2; // 32px 
+$spacing-3xl: $space * 2.25; // 36px
+$spacing-4xl: $space * 2.5; // 40px 
+$spacing-5xl: $space * 2.75; // 44px
+$spacing-6xl: $space * 3; // 48px 
+$spacing-7xl: $space * 3.25; // 52px
+$spacing-8xl: $space * 3.5; // 56px 
+$spacing-9xl: $space * 3.75; // 60px
+$spacing-10xl: $space * 4; // 64px 
+$spacing-11xl: $space * 4.25; // 68px
+$spacing-12xl: $space * 4.5; // 72px
+$spacing-13xl: $space * 4.75; // 76px
+$spacing-14xl: $space * 5; // 80px 
+
+// ------------- FONT SIZE ------------- //
+$spacing-xxs: 0.5rem; //8px
+$font-size-xs: 0.75rem; //12px
+$font-size-default: 14px; //14px
+$font-size-sm: 1rem; //16px
+$font-size-md: 1.125rem; //18px
+$font-size-lg: 1.25rem; //20px
+$font-size-xl: 1.375rem; //22px
+$font-size-xxl: 1.5rem; //24px
+$font-size-3xl: 1.75rem; //28px
+
+// ------------- BORDER RADIUS ------------- //
+$border-radius-xs: 0.25rem; //4px
+$border-radius-sm: 0.5rem; //8px
+$border-default: 1px solid $gray-pastel;
+$border-thick: 1.5px solid $gray-border;
+$border-radius-button: 24px;
+
+// ------------- BOX SHADOW ------------- //
+$box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.2);
+$box-shadow-light: 9px 0 12px -2px rgb(30 20 100 / 6%);
+$box-shadow-thick: 0 4px 12px rgba(30, 20, 100, 0.1);
+$box-shadow-grey: $spacing-3xs $spacing-3xs $spacing-md $gray-shadow;
+$color-box-shadow: rgba(30, 20, 100, 0.1);
+$color-box-shadow-2: rgba(30, 20, 100, 0.25);
+
+// dotted svg line
+$dotted-line: url("data:image/svg+xml,%3csvg width='100%25' height='100%25' xmlns='http://www.w3.org/2000/svg'%3e%3crect width='100%25' height='100%25' fill='none' stroke='%239F9F9FFF' stroke-width='4' stroke-dasharray='6%2c 14' stroke-dashoffset='0' stroke-linecap='square'/%3e%3c/svg%3e");
+
+//size
+$svg-width: 14px;
