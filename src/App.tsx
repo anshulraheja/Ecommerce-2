@@ -1,4 +1,5 @@
 import { useDispatch } from 'react-redux';
+import './App.scss';
 import { useTypedSelector } from './store';
 import { loginRequest, signupRequest } from './store/auth/actions';
 import { ICategory, IProduct } from './store/ecommerce';
@@ -10,15 +11,18 @@ import {
 	fetchSingleCategoryRequest,
 	fetchSingleProductRequest
 } from './store/ecommerce/actions';
+import './styles/default.scss';
 
 function App() {
 	const dispatch = useDispatch();
 	const reduxState = useTypedSelector((state) => state.EcommerceReducer);
 	const { products, categories } = reduxState;
 	return (
-		<div>
+		<div className="container">
 			{' '}
-			<button onClick={() => dispatch(fetchProductsRequest())}>Call</button>
+			<button className="btn" onClick={() => dispatch(fetchProductsRequest())}>
+				Call
+			</button>
 			<button onClick={() => dispatch(fetchCategoriesRequest())}>Categories</button>
 			<button onClick={() => dispatch(fetchCartRequest())}>Fetch Cart</button>
 			<div>
