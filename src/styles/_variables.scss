@@ -1,6 +1,6 @@
 $TRBL: top, right, bottom, left;
 
-$color-primary: #007bff !default;
+$color-primary: #2874f0 !default; //u
 $color-secondary: #6c757d !default;
 $color-success: #28a745 !default;
 $color-error: #dc3545 !default;
@@ -13,6 +13,7 @@ $color-light: #f8f9fa !default;
 
 $primary-black: #000;
 $primary-white: #fff;
+$primary-white: #f0f0f0; //u
 $primary-background: #f6f6fb;
 
 $color-ghost-white: #f7f5ff;
@@ -38,7 +39,7 @@ $gray-light-dark: #848484;
 $gray-extra-dark: #222;
 $gray-extra-dark-1: #2219;
 $gray-dark: #333;
-$gray-extra-dark-2: #1B1B1B;
+$gray-extra-dark-2: #1b1b1b;
 $gray-medium-dark: #666;
 $gray-medium: #969696;
 $gray-medium-light: #e8e8e8;
@@ -64,9 +65,9 @@ $gray-border-light: #e6e6ee;
 $gray-charcoal: #4a4a4a;
 
 // Primary
-$color-primary: #ff5f00;
-$color-primary-medium: #ffb183;
-$color-primary-light: #ffeadd;
+$color-primary-red: #ff5f00;
+$color-primary-red-medium: #ffb183;
+$color-primary-red-light: #ffeadd;
 
 // Secondary
 $color-secondary: #1e1464;
@@ -115,7 +116,7 @@ $color-dark-blue: #323444;
 $color-light-blue: #1890ff;
 $color-extra-light-blue: #e2dff8;
 $color-purply-blue: #f4f2ff;
-$color-medium-blue: #4582EC;
+$color-medium-blue: #4582ec;
 
 // Red scale
 $red-extra-light: #feefe4;
@@ -130,26 +131,26 @@ $orange-medium: #ff6509;
 
 // ------------- SPACING ------------- //
 $space: 1rem; // 16px //
-$spacing-3xs: $space * 0.25; // 4px 
-$spacing-xxs: $space * 0.5; // 8px 
-$spacing-xs: $space * 0.75; // 12px 
-$spacing-sm: $space; // 16px 
-$spacing-md: $space * 1.25; // 20px 
-$spacing-lg: $space * 1.5; // 24px 
-$spacing-xl: $space * 1.75; // 28px 
-$spacing-xxl: $space * 2; // 32px 
+$spacing-3xs: $space * 0.25; // 4px
+$spacing-xxs: $space * 0.5; // 8px
+$spacing-xs: $space * 0.75; // 12px
+$spacing-sm: $space; // 16px
+$spacing-md: $space * 1.25; // 20px
+$spacing-lg: $space * 1.5; // 24px
+$spacing-xl: $space * 1.75; // 28px
+$spacing-xxl: $space * 2; // 32px
 $spacing-3xl: $space * 2.25; // 36px
-$spacing-4xl: $space * 2.5; // 40px 
+$spacing-4xl: $space * 2.5; // 40px
 $spacing-5xl: $space * 2.75; // 44px
-$spacing-6xl: $space * 3; // 48px 
+$spacing-6xl: $space * 3; // 48px
 $spacing-7xl: $space * 3.25; // 52px
-$spacing-8xl: $space * 3.5; // 56px 
+$spacing-8xl: $space * 3.5; // 56px
 $spacing-9xl: $space * 3.75; // 60px
-$spacing-10xl: $space * 4; // 64px 
+$spacing-10xl: $space * 4; // 64px
 $spacing-11xl: $space * 4.25; // 68px
 $spacing-12xl: $space * 4.5; // 72px
 $spacing-13xl: $space * 4.75; // 76px
-$spacing-14xl: $space * 5; // 80px 
+$spacing-14xl: $space * 5; // 80px
 
 // ------------- FONT SIZE ------------- //
 $spacing-xxs: 0.5rem; //8px
