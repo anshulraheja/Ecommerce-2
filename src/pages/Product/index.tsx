@@ -11,12 +11,12 @@ const Product = () => {
 		console.log(key);
 	};
 	return (
-		<div className="productpage-container">
+		<div className="product-page-container">
 			<div>Filter component</div>
 			<div>
-				<div>
-					<span>Mobiles</span>
-					<span>(Showing 1 – 24 products of 440 products)</span>
+				<div className="product-page-info">
+					<span className="product-page-product-name">Mobiles</span>
+					<span className="product-page-display-info">(Showing 1 – 24 products of 440 products)</span>
 				</div>
 				<div>
 					<Tabs defaultActiveKey="1" items={items} onChange={handleTabChange} />

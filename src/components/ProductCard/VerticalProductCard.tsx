@@ -5,7 +5,7 @@ const VerticalProductCard = () => {
 		<div className="card-container">
 			<div>
 				<a href="/" className="card-hover">
-					<img src="https://os.alipayobjects.com/rmsportal/QBnOOoLaAfKPirc.png" />
+					<img src="https://rukminim1.flixcart.com/image/416/416/l4n2oi80/mobile/x/o/a/-original-imagfhu75eupxyft.jpeg?q=70" />
 				</a>
 			</div>
 			<div className="card-info">

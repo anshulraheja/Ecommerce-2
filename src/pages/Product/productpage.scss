@@ -1,7 +1,20 @@
-.productpage-container {
+.product-page-container {
 	margin: 0 auto;
 	max-width: 1680px;
 	padding: 8px;
+	.product-page-info {
+		display: flex;
+		gap: 0.5rem;
+	}
+	.product-page-product-name {
+		font-weight: 600;
+		font-size: 16px;
+	}
+	.product-page-display-info {
+		margin-left: 10px;
+		font-size: 12px;
+		color: #878787;
+	}
 	.product-card-container {
 		display: flex;
 		gap: 1rem;
