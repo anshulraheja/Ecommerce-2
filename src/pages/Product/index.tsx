@@ -1,25 +1,27 @@
 import { Tabs } from 'antd';
+import FilterBar from '../../components/FilterBar';
 import { VerticalProductCard } from '../../components/ProductCard';
 import './productpage.scss';
 const Product = () => {
 	const items = [
-		{ label: 'Tab 1', key: '1' },
-		{ label: 'Tab 2', key: '2' },
-		{ label: 'Tab 3', key: '3' }
+		{ label: 'Popularity', key: '1' },
+		{ label: 'Price--Low to high', key: '2' },
+		{ label: 'Price--High to low', key: '3' }
 	];
 	const handleTabChange = (key: string) => {
 		console.log(key);
 	};
 	return (
 		<div className="product-page-container">
-			<div>Filter component</div>
-			<div>
+			<FilterBar />
+			<div className="product-page-content">
 				<div className="product-page-info">
 					<span className="product-page-product-name">Mobiles</span>
 					<span className="product-page-display-info">(Showing 1 – 24 products of 440 products)</span>
 				</div>
-				<div>
-					<Tabs defaultActiveKey="1" items={items} onChange={handleTabChange} />
+				<div className="sort-options">
+					<span className="sort-header">Sort By</span>
+					<Tabs defaultActiveKey="1" items={items} onChange={handleTabChange} className="sort-tabs" />
 				</div>
 				<div className="product-card-container">
 					<VerticalProductCard />

@@ -1,19 +1,40 @@
+@import '../../styles/_variables.scss';
 .product-page-container {
 	margin: 0 auto;
 	max-width: 1680px;
 	padding: 8px;
+	display: flex;
+	.product-page-content {
+		flex: 1 0 300px;
+		background: $white;
+		padding: 1rem;
+	}
 	.product-page-info {
 		display: flex;
 		gap: 0.5rem;
+		align-items: center;
 	}
 	.product-page-product-name {
 		font-weight: 600;
 		font-size: 16px;
 	}
 	.product-page-display-info {
-		margin-left: 10px;
 		font-size: 12px;
 		color: #878787;
+	}
+	.sort-options {
+		display: flex;
+		align-items: center;
+		gap: 1rem;
+		font-size: 14px;
+		// border-bottom: 1px solid grey;
+		.sort-header {
+			font-weight: 600;
+		}
+		.sort-tabs,
+		.sort-tabs > * {
+			margin: 0;
+		}
 	}
 	.product-card-container {
 		display: flex;
