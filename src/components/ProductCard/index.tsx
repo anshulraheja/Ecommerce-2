@@ -1,3 +1,3 @@
 import VerticalProductCard from './VerticalProductCard';
-
-export { VerticalProductCard };
+import WishlistProductCard from './WishlistProductCart';
+export { VerticalProductCard, WishlistProductCard };
