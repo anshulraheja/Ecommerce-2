@@ -1,0 +1,39 @@
+.wl-modal-container {
+	right: 7px;
+	box-shadow: 0 4px 16px 0 rgba(0, 0, 0, 0.2);
+	top: 42px;
+	width: 320px;
+	text-align: center;
+	position: absolute;
+	background: #fff;
+	color: #212121;
+	font-size: 14px;
+	transition: opacity 0.3s ease-in-out;
+	position: absolute;
+	.wl-modal-content {
+		padding: 16px;
+		overflow: auto;
+	}
+	.wl-modal-btn-container {
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		gap: 0.25rem;
+		margin: 1rem 0 0 0;
+		.wl-modal-btn-cancel {
+			border: none;
+			color: #c2c2c2;
+			font-size: 13px;
+			cursor: pointer;
+		}
+		.wl-modal-btn-remove {
+			border: none;
+			color: #ff6161;
+			font-size: 13px;
+			cursor: pointer;
+		}
+		.wl-modal-btn-remove::before {
+			display: none;
+		}
+	}
+}

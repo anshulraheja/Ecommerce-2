@@ -1,11 +1,12 @@
 import { DeleteFilled, StarFilled } from '@ant-design/icons';
+import RemoveFromWishlistConfirmation from '../Modal/RemoveFromWishlistConfirmation/RemoveFromWishlistConfirmation';
 import './ProductCard.scss';
 const WishlistProductCart = () => {
 	const removeFromWishlist = () => {
 		console.log('removed');
 	};
 	return (
-		<div style={{ borderBottom: '1px solid #e0e0e0' }}>
+		<div style={{ borderBottom: '1px solid #e0e0e0', position: 'relative' }}>
 			<div className="wl-card-container">
 				<div className="wl-card-img-box">
 					<img
@@ -28,6 +29,7 @@ const WishlistProductCart = () => {
 					</div>
 					<DeleteFilled className="wl-delete-icon" onClick={removeFromWishlist} />
 				</div>
+				<RemoveFromWishlistConfirmation />
 			</div>
 		</div>
 	);
