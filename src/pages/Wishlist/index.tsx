@@ -1,4 +1,3 @@
-import { WishlistProductCard } from '../../components/ProductCard';
 import './wishlist.scss';
 const Wishlist = () => {
 	return (
@@ -24,13 +23,20 @@ const Wishlist = () => {
 				<div className="wishlist-bar">
 					<div style={{ minHeight: '300px' }}>
 						<div style={{ background: '#fff' }}>
-							<div className="wishlist-header">
+							{/* <div className="wishlist-header">
 								<span>Wishlist (6)</span>
 							</div>
 							<WishlistProductCard />
 							<WishlistProductCard />
 							<WishlistProductCard />
-							<WishlistProductCard />
+							<WishlistProductCard /> */}
+							<div className="wishlist-empty">
+								<img src="https://static-assets-web.flixcart.com/fk-p-linchpin-web/fk-cp-zion/img/mywishlist-empty_39f7a5.png" />
+								<span className="wishlist-empty-title">Empty Wishlist</span>
+								<span className="wishlist-empty-description">
+									You have no items in your wishlist. Start adding!
+								</span>
+							</div>
 						</div>
 					</div>
 				</div>
