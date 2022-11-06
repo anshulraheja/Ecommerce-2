@@ -1,13 +1,17 @@
-import { StarFilled } from '@ant-design/icons';
+import { HeartOutlined, StarFilled } from '@ant-design/icons';
 import './ProductCard.scss';
 const VerticalProductCard = () => {
 	return (
 		<div className="card-container">
-			<div>
-				<a href="/">
-					<img src="https://rukminim1.flixcart.com/image/416/416/l4n2oi80/mobile/x/o/a/-original-imagfhu75eupxyft.jpeg?q=70" />
-				</a>
+			<div className="btn-wishlist-toggle">
+				<HeartOutlined />
 			</div>
+			<div style={{ width: '300px' }}>
+				{/* <a href="/"> */}
+				<img src="https://rukminim1.flixcart.com/image/416/416/l4n2oi80/mobile/x/o/a/-original-imagfhu75eupxyft.jpeg?q=70" />
+				{/* </a> */}
+			</div>
+
 			<div className="card-info">
 				<div className="card-brand-name">Samsung</div>
 				<a href="/" className="card-product-name">
