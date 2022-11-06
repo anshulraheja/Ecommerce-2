@@ -1,0 +1,45 @@
+.filter-container {
+	flex: 0 0 280px;
+	max-width: 280px;
+	padding: 0px 10px 0px 0px;
+	.filter-content {
+		position: relative;
+		background: #fff;
+		box-shadow: 0 1px 8px 0 rgba(0, 0, 0, 0.06);
+	}
+	.filter-section {
+		padding: 16px;
+		border-bottom: 1px solid #f0f0f0;
+	}
+	.filter-header {
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+	}
+	.filter-header-text {
+		font-size: 18px;
+		text-transform: capitalize;
+	}
+	.filter-btn-clear-all {
+		cursor: pointer;
+		color: #2874f0;
+		font-size: 12px;
+		text-transform: uppercase;
+		font-weight: 500;
+	}
+	.filter-subheader-text {
+		font-size: 13px;
+		font-weight: 600;
+		text-transform: uppercase;
+		letter-spacing: 0.3px;
+		display: inline-block;
+	}
+	.checkbox-group {
+		display: flex;
+		flex-direction: column;
+		margin-top: 1rem;
+	}
+	.checkbox-group > * {
+		margin: 0 0 0.5rem 0;
+	}
+}

@@ -1,0 +1,26 @@
+.homepage-container {
+	margin: 1rem auto;
+	max-width: 1680px;
+	padding: 0.5rem;
+	.carousel-container {
+		margin: 1rem 0;
+		.carousel {
+			height: 260px;
+			color: white;
+			line-height: 160px;
+			text-align: center;
+			background: blue;
+		}
+	}
+	.home-img-container {
+		margin: 0.5rem 0;
+		display: flex;
+		gap: 1rem;
+		.home-img-box {
+			border: 1px solid black;
+			height: 300px;
+			flex-basis: 100%;
+			flex: 1 0 200px;
+		}
+	}
+}

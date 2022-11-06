@@ -1,9 +1,9 @@
 import { Outlet } from 'react-router-dom';
 import Navbar from '../components/Navbar';
-
+import './appLayout.scss';
 const AppLayout = () => {
 	return (
-		<div>
+		<div className="app-layout">
 			<Navbar />
 			<div>
 				<Outlet />
