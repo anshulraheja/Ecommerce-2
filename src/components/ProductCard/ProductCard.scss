@@ -71,34 +71,24 @@
 .wishlist-bar {
 	.wl-card-container {
 		line-height: 1;
-		// padding: 24px 0 30px 24px;
 		padding: 1.25rem;
-		// display: block;
-		// overflow: hidden;
 		display: flex;
 		gap: 2rem;
 	}
 	.wl-card-img-box {
-		// position: relative;
 		width: 90px;
-		// float: left;
 		img {
 			width: 100%;
 		}
 	}
 	.wl-card-description {
-		// padding-left: 25px;
-		// float: none;
-		// width: auto;
 		display: flex;
 		flex-direction: column;
 		gap: 0.25rem;
 		.wl-card-header {
-			// font-weight: 400;
 			font-size: 15px;
 			display: block;
 			cursor: pointer;
-			// margin-bottom: 5px;
 		}
 		.wl-card-rating {
 			line-height: normal;

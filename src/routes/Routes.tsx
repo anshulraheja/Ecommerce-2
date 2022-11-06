@@ -7,10 +7,6 @@ import Product from '../pages/Product';
 import Wishlist from '../pages/Wishlist';
 import PrivateRoute from './PrivateRoute';
 
-// interface IProps {
-// 	routes: IRoute[];
-// }
-
 export const RouteComp = () => {
 	return (
 		<Routes>
@@ -41,9 +37,3 @@ export const RouteComp = () => {
 		</Routes>
 	);
 };
-
-// export const RouteComp: React.FC<IProps> = ({ routes }) => {
-// 	return <Routes>{routes && routes.map((route: IRoute) => <RouteWithSubRoutes key={route.path} {...route} />)}</Routes>;
-// };
-
-//export default Router;
