@@ -1,0 +1,91 @@
+.auth-modal {
+	position: fixed;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	background-color: rgba(0, 0, 0, 0.6);
+	transition: opacity 0.2s;
+	pointer-events: auto;
+	.modal-container {
+		position: relative;
+		.btn-close-modal {
+			position: absolute;
+			right: 0;
+			top: 0;
+			padding: 0;
+			background: transparent;
+			border: none;
+			cursor: pointer;
+			color: #fff;
+			font-size: 32px;
+			line-height: 1;
+		}
+		.modal-box {
+			min-width: 400px;
+			max-width: 90%;
+			min-height: 200px;
+			max-height: 90vh;
+			background: #fff;
+			border-radius: 4px;
+			margin: 0 auto;
+			overflow: auto;
+			.modal-content-box {
+				color: #212121;
+				margin: 0 auto;
+				border-radius: 2px;
+				height: 528px;
+				max-width: 750px;
+				min-width: 650px;
+				display: flex;
+				.modal-left {
+					background-color: #2874f0;
+					color: #fff;
+					padding: 40px 33px;
+					.modal-left-title {
+						font-size: 28px;
+						font-weight: 600;
+					}
+					.modal-left-content {
+						font-size: 18px;
+						margin-top: 16px;
+						color: #dbdbdb;
+					}
+				}
+				.modal-right {
+					padding: 56px 35px 16px;
+					background-color: #fff;
+					.btn-existing-user {
+						text-align: center;
+						color: #2874f0;
+						background-color: #fff;
+						width: 100%;
+						font-size: 15px;
+						box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.2);
+						display: inline-block;
+						border-radius: 2px;
+						padding: 10px 20px;
+						font-size: 13px;
+						font-weight: 600;
+						cursor: pointer;
+					}
+					.btn-signup {
+						background: #fb641b;
+						box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.2);
+						border: none;
+						color: #fff;
+					}
+					.terms-and-condition {
+						color: #878787;
+						font-size: 12px;
+						font-weight: 400;
+						margin-top: 10px;
+					}
+				}
+			}
+		}
+	}
+}
