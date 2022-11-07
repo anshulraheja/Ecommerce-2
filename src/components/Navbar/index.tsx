@@ -1,5 +1,5 @@
-import { ShoppingCartOutlined } from '@ant-design/icons';
-import { Avatar, Badge, Button, Col, Dropdown, Input, Menu, Row, Space } from 'antd';
+import { DownOutlined, ShoppingCartOutlined } from '@ant-design/icons';
+import { Avatar, Badge, Button, Dropdown, Input, Menu, Row, Space } from 'antd';
 import './navbar.scss';
 const { Search } = Input;
 const Navbar = () => {
@@ -33,42 +33,44 @@ const Navbar = () => {
 	return (
 		<div className="navbar-container">
 			<Row className="navbar-container-content">
-				<Col md={1} className="nav-title">
-					Flipkart
-				</Col>
-				<Col md={6} className="search-bar" style={{ padding: '0px' }}>
-					<Search placeholder="Search for products, brands and more" onSearch={onSearch} enterButton />
-				</Col>
-				{/* <Col md={1} offset={8}>
-					<Dropdown overlay={menu}>
-						<a onClick={(e) => e.preventDefault()}>
-							<Space className="nav-cta" size={4}>
-								Anshul
-								<DownOutlined className="nav-down-icon" />
-							</Space>
-						</a>
-					</Dropdown>
-				</Col> */}
-				<Col md={1} offset={8}>
-					<Dropdown overlay={menu} arrow>
-						<Button className="btn-login">
-							<a href="/login">Login</a>
-						</Button>
-					</Dropdown>
-				</Col>
-				<Col md={1}>
-					<Space size={4}>
-						<Badge count={5} color="#ff6161" size="small" title={'5 items in your cart'}>
-							<Avatar
-								icon={<ShoppingCartOutlined style={{ fontSize: '20px' }} />}
-								alt="cart"
-								size="default"
-								className="nav-cart-icon"
-							/>
-						</Badge>
-						<span className="nav-cta">Cart</span>
-					</Space>
-				</Col>
+				<div className="navbar-right">
+					<div className="nav-title">Flipkart</div>
+					<div className="search-bar" style={{ padding: '0px' }}>
+						<Search placeholder="Search for products, brands and more" onSearch={onSearch} enterButton />
+					</div>
+				</div>
+				<div className="navbar-left">
+					<div>
+						<Dropdown overlay={menu}>
+							<a onClick={(e) => e.preventDefault()}>
+								<Space className="nav-cta" size={4}>
+									Anshul
+									<DownOutlined className="nav-down-icon" />
+								</Space>
+							</a>
+						</Dropdown>
+					</div>
+					<div>
+						<Dropdown overlay={menu} arrow>
+							<Button className="btn-login">
+								<a href="/login">Login</a>
+							</Button>
+						</Dropdown>
+					</div>
+					<div>
+						<Space size={4}>
+							<Badge count={5} color="#ff6161" size="small" title={'5 items in your cart'}>
+								<Avatar
+									icon={<ShoppingCartOutlined style={{ fontSize: '20px' }} />}
+									alt="cart"
+									size="default"
+									className="nav-cart-icon"
+								/>
+							</Badge>
+							<span className="nav-cta">Cart</span>
+						</Space>
+					</div>
+				</div>
 			</Row>
 		</div>
 	);

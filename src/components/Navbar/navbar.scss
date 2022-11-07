@@ -8,6 +8,17 @@
 		margin: 0 auto;
 		align-items: center;
 		gap: 2rem;
+		.navbar-right {
+			display: flex;
+			gap: 2rem;
+			flex: 1;
+		}
+		.navbar-left {
+			display: flex;
+			gap: 2rem;
+			align-items: center;
+			margin-left: auto;
+		}
 	}
 	.search-bar {
 		display: inline-block;
