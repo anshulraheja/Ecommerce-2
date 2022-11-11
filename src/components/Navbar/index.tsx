@@ -1,31 +1,44 @@
 import { DownOutlined, ShoppingCartOutlined } from '@ant-design/icons';
-import { Avatar, Badge, Button, Dropdown, Input, Menu, Row, Space } from 'antd';
+import { Avatar, Badge, Dropdown, Input, Menu, Row, Space } from 'antd';
+import { Link, useLocation, useNavigate } from 'react-router-dom';
 import './navbar.scss';
 const { Search } = Input;
 const Navbar = () => {
+	const navigate = useNavigate();
+	const location = useLocation();
+
 	const onSearch = (value: string) => console.log(value);
-	const onClick = (e: any) => {
-		console.log(e.key);
+	const handleNavigation = (e: any) => {
+		switch (e.type) {
+			case 'wishlist':
+				navigate('/wishlist');
+				break;
+			case 'logout':
+				navigate('/');
+				break;
+			default:
+				navigate('/');
+		}
 	};
 	const menu = (
 		<Menu
-			onClick={onClick}
+			onClick={handleNavigation}
 			items={[
-				{
-					label: 'My Profile',
-					key: '1'
-				},
-				{
-					label: 'Orders',
-					key: '2'
-				},
+				// {
+				// 	label: 'My Profile',
+				// 	key: '1'
+				// },
+				// {
+				// 	label: 'Orders',
+				// 	key: '2'
+				// },
 				{
 					label: 'Wishlist',
-					key: '3'
+					key: 'wishlist'
 				},
 				{
 					label: 'Logout',
-					key: '4'
+					key: 'logout'
 				}
 			]}
 		/>
@@ -34,7 +47,9 @@ const Navbar = () => {
 		<div className="navbar-container">
 			<Row className="navbar-container-content">
 				<div className="navbar-right">
-					<div className="nav-title">Flipkart</div>
+					<div className="nav-title">
+						<Link to="/">Flipkart</Link>
+					</div>
 					<div className="search-bar" style={{ padding: '0px' }}>
 						<Search placeholder="Search for products, brands and more" onSearch={onSearch} enterButton />
 					</div>
@@ -52,9 +67,9 @@ const Navbar = () => {
 					</div>
 					<div>
 						<Dropdown overlay={menu} arrow>
-							<Button className="btn-login">
-								<a href="/login">Login</a>
-							</Button>
+							<Link className="btn-login" to="/login" state={location}>
+								Login
+							</Link>
 						</Dropdown>
 					</div>
 					<div>

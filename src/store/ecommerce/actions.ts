@@ -19,6 +19,7 @@ import {
 	FETCH_SINGLE_PRODUCT_SUCCESS,
 	FETCH_WISHLIST_REQUEST,
 	FETCH_WISHLIST_SUCCESS,
+	UPDATE_FILTER_PRODUCTS,
 	UPDATE_QTY_IN_CART_REQUEST,
 	UPDATE_QTY_IN_CART_SUCCESS
 } from './actionTypes';
@@ -45,6 +46,8 @@ import {
 	FetchWishlistSuccess,
 	ICategory,
 	IProduct,
+	UpdateFilterPayload,
+	UpdateFilterProducts,
 	UpdateQtyInCartRequest,
 	UpdateQtyInCartSuccess
 } from './types';
@@ -149,5 +152,9 @@ export const deleteFromWishlistRequest = (payload: string): DeleteFromWishlistRe
 });
 export const deleteFromWishlistSuccess = (payload: Array<IProduct>): DeleteFromWishlistSuccess => ({
 	type: DELETE_FROM_WISHLIST_SUCCESS,
+	payload
+});
+export const updateFilterProducts = (payload: UpdateFilterPayload): UpdateFilterProducts => ({
+	type: UPDATE_FILTER_PRODUCTS,
 	payload
 });

@@ -20,10 +20,11 @@ import {
 	FETCH_SINGLE_PRODUCT_SUCCESS,
 	FETCH_WISHLIST_REQUEST,
 	FETCH_WISHLIST_SUCCESS,
+	UPDATE_FILTER_PRODUCTS,
 	UPDATE_QTY_IN_CART_REQUEST,
 	UPDATE_QTY_IN_CART_SUCCESS
 } from './actionTypes';
-import { ICategory, IProduct, IProductsState, ProductActions } from './types';
+import { ICategory, IFilterData, IProduct, IProductsState, ProductActions } from './types';
 
 export const ecommerceInitialState: IProductsState = {
 	products: [],
@@ -31,7 +32,8 @@ export const ecommerceInitialState: IProductsState = {
 	categories: [],
 	singleCategory: <ICategory>{},
 	cart: [],
-	wishlist: []
+	wishlist: [],
+	filterData: {} as IFilterData
 };
 
 /**
@@ -144,7 +146,39 @@ export const EcommerceReducer: Reducer<IProductsState, ProductActions> = (
 				...state,
 				wishlist: action.payload
 			};
-
+		case UPDATE_FILTER_PRODUCTS:
+			const { price, selectedCategory } = action.payload;
+			const allProducts: Array<IProduct> = [...state.products];
+			let filterProducts: Array<IProduct> = [];
+			if (price || state.filterData.price) {
+				const priceArr = price || state.filterData.price;
+				filterProducts = priceArr
+					? state.filterData.isFilter
+						? state.filterData.filterProducts?.filter((ele) => ele?.price > priceArr[0] && ele.price < priceArr[1])
+						: allProducts?.filter((ele) => ele?.price > priceArr[0] && ele.price < priceArr[1])
+					: [];
+			}
+			if (selectedCategory?.length || state.filterData.selectedCategory?.length) {
+				const categories = selectedCategory || state.filterData.selectedCategory;
+				console.log('categories', categories);
+				filterProducts = categories
+					? state.filterData.isFilter
+						? categories.length > 0
+							? state.filterData.filterProducts?.filter((ele) => categories.includes(ele.categoryName))
+							: allProducts?.filter((ele) => categories.includes(ele.categoryName))
+						: allProducts?.filter((ele) => categories.includes(ele.categoryName))
+					: [];
+			}
+			return {
+				...state,
+				filterData: {
+					...state.filterData,
+					price: action.payload.price,
+					filterProducts: filterProducts,
+					selectedCategory: action.payload.selectedCategory,
+					isFilter: true
+				}
+			};
 		default:
 			return { ...state };
 	}

@@ -1,3 +1,4 @@
+import { toast } from 'react-toastify';
 import { all, call, put, takeLatest } from 'redux-saga/effects';
 import { login, signup } from '../../services/auth';
 import { loginSuccess, signupSuccess } from './actions';
@@ -19,8 +20,10 @@ export function* loginSaga(action: LoginRequest) {
 		const response: LoginResponseGenerator = yield call(login, action.payload);
 		yield put(loginSuccess(response));
 		localStorage.setItem('ecommerce_user_token', response.encodedToken);
-	} catch (error) {
-		console.log(error);
+		const pathname = `${action.payload.pathname}`;
+		action.payload.navigate(pathname);
+	} catch (error: any) {
+		toast.error(`${error.title}`);
 	}
 }
 

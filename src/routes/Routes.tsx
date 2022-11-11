@@ -1,8 +1,8 @@
+import Homepage from 'pages/Homepage';
 import { Route, Routes } from 'react-router-dom';
 import AppLayout from '../pages';
 import Auth from '../pages/Auth';
 import Cart from '../pages/Cart';
-import Homepage from '../pages/Homepage';
 import Product from '../pages/Product';
 import Wishlist from '../pages/Wishlist';
 import PrivateRoute from './PrivateRoute';

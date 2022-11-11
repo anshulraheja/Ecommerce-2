@@ -16,7 +16,7 @@ export const categories: ICategories[] = [
 	},
 	{
 		_id: uuid(),
-		categoryName: 'Oneplus'
+		categoryName: 'OnePlus'
 	},
 	{
 		_id: uuid(),

@@ -1,3 +1,4 @@
+import { CheckboxValueType } from 'antd/lib/checkbox/Group';
 import {
 	ADD_TO_CART_REQUEST,
 	ADD_TO_CART_SUCCESS,
@@ -19,6 +20,7 @@ import {
 	FETCH_SINGLE_PRODUCT_SUCCESS,
 	FETCH_WISHLIST_REQUEST,
 	FETCH_WISHLIST_SUCCESS,
+	UPDATE_FILTER_PRODUCTS,
 	UPDATE_QTY_IN_CART_REQUEST,
 	UPDATE_QTY_IN_CART_SUCCESS
 } from './actionTypes';
@@ -30,8 +32,15 @@ export type IProductsState = {
 	singleCategory: ICategory;
 	cart: Array<IProduct>;
 	wishlist: Array<IProduct>;
+	filterData: IFilterData;
 };
 
+export type IFilterData = {
+	price: Array<number> | undefined;
+	selectedCategory: CheckboxValueType[] | undefined;
+	filterProducts: Array<IProduct> | [];
+	isFilter: boolean;
+};
 export type FetchProductsRequest = {
 	type: typeof FETCH_PRODUCT_REQUEST;
 };
@@ -43,11 +52,11 @@ export type FetchProductsSuccess = {
 
 export type IProduct = {
 	_id: string;
-	title: string;
-	author: string;
-	price: string;
+	name: string;
+	price: number;
+	rating: number;
+	image: string;
 	categoryName: string;
-	id: string;
 };
 
 export type FetchSingleProductRequest = {
@@ -141,6 +150,14 @@ export type DeleteFromWishlistSuccess = {
 	type: typeof DELETE_FROM_WISHLIST_SUCCESS;
 	payload: Array<IProduct>;
 };
+export type UpdateFilterPayload = {
+	price?: Array<number>;
+	selectedCategory?: CheckboxValueType[];
+};
+export type UpdateFilterProducts = {
+	type: typeof UPDATE_FILTER_PRODUCTS;
+	payload: UpdateFilterPayload;
+};
 export type ProductActions =
 	| FetchProductsRequest
 	| FetchProductsSuccess
@@ -163,4 +180,5 @@ export type ProductActions =
 	| AddToWishlistRequest
 	| AddToWishlistSuccess
 	| DeleteFromWishlistRequest
-	| DeleteFromWishlistSuccess;
+	| DeleteFromWishlistSuccess
+	| UpdateFilterProducts;

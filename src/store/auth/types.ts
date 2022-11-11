@@ -23,6 +23,8 @@ export type SignupSuccess = {
 export type LoginRequestPayload = {
 	email: string;
 	password: string;
+	navigate?: any;
+	pathname?: string;
 };
 
 export type LoginRequest = {
